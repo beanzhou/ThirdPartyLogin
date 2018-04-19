@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'qj_test'
+            keyPassword '123456'
+            storeFile file('/Users/beanzhou/project/workspace/gopath/src/github.com/beanzhou/ThirdPartyLogin/Android/app/qj_test.keystore')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.beanzhou.login.login"
@@ -19,7 +27,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
